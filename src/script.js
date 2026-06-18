@@ -1,13 +1,91 @@
 document.addEventListener('DOMContentLoaded', function () {
   var header = document.querySelector('.header');
 
-  /* ── Word stagger entrance ── */
-  var words = document.querySelectorAll('.title-word');
-  words.forEach(function (w, i) {
-    setTimeout(function () {
-      w.classList.add('visible');
-    }, 300 + i * 150);
-  });
+  /* ── Character split text animation ── */
+  function splitText(el) {
+    var text = el.textContent;
+    el.textContent = '';
+    var container = document.createElement('span');
+    container.className = 'split-container';
+    for (var i = 0; i < text.length; i++) {
+      var ch = document.createElement('span');
+      ch.className = 'split';
+      ch.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+      ch.style.transitionDelay = (i * 0.035) + 's';
+      container.appendChild(ch);
+    }
+    el.appendChild(container);
+  }
+
+  var slides = document.querySelectorAll('.labeled-title > div');
+  if (slides.length) {
+    var firstSlide = slides[0];
+    // First slide provides height - always visible
+    firstSlide.classList.add('is-first');
+    firstSlide.classList.add('is-visible');
+    var firstWords = firstSlide.querySelectorAll('.title-word');
+    firstWords.forEach(function (w, i) {
+      splitText(w);
+      setTimeout(function () {
+        w.classList.add('is-visible');
+      }, 200 + i * 150);
+    });
+
+    if (slides.length > 1) {
+      var currentSlide = 0;
+      var slideTimer = null;
+      var isTransitioning = false;
+
+      function showSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        var oldSlide = slides[currentSlide];
+        var newSlide = slides[index];
+
+        // reset new slide words
+        var newWords = newSlide.querySelectorAll('.title-word');
+        newWords.forEach(function (w) {
+          w.classList.remove('is-visible');
+          w.innerHTML = '';
+        });
+
+        // hide old
+        oldSlide.classList.remove('is-visible');
+
+        // show new
+        newSlide.classList.add('is-visible');
+        newWords.forEach(function (w, i) {
+          splitText(w);
+          setTimeout(function () {
+            w.classList.add('is-visible');
+          }, 100 + i * 120);
+        });
+
+        currentSlide = index;
+        isTransitioning = false;
+
+        clearTimeout(slideTimer);
+        slideTimer = setTimeout(nextSlide, 4500);
+      }
+
+      function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+      }
+
+      slideTimer = setTimeout(nextSlide, 4000);
+
+      var labeledTitle = document.querySelector('.labeled-title');
+      if (labeledTitle) {
+        labeledTitle.addEventListener('mouseenter', function () {
+          clearTimeout(slideTimer);
+        });
+        labeledTitle.addEventListener('mouseleave', function () {
+          slideTimer = setTimeout(nextSlide, 4000);
+        });
+      }
+    }
+  }
 
   /* ── Scroll reveal ── */
   var revealObserver = new IntersectionObserver(function (entries) {

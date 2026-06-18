@@ -474,9 +474,14 @@ h1, .h1 { margin: 0; }
   left: 0;
   width: 100%;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-.labeled-title > div.is-active {
+.labeled-title > div.is-first {
   position: relative;
+}
+.labeled-title > div.is-visible {
+  opacity: 1;
 }
 .labeled-title-outer {
   display: flex;
@@ -489,12 +494,20 @@ h1, .h1 { margin: 0; }
   color: var(--c-foreground);
   line-height: 1;
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.8s, transform 0.8s;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.title-word.visible { opacity: 1; transform: translateY(0); }
+.title-word .split-container {
+  overflow: hidden;
+  display: inline-block;
+}
+.title-word .split {
+  display: inline-block;
+  white-space: pre;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.title-word.is-visible .split {
+  transform: translateY(0);
+}
 .labels-outer {
   bottom: 20px;
   overflow: hidden;
