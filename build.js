@@ -38,10 +38,7 @@ pages.forEach(({ file, title, desc, section }) => {
   console.log(`✓ Built ${file}`);
 });
 
-// Copy styles
-const srcCss = fs.readFileSync(path.join(__dirname, 'src', 'styles.css'), 'utf-8');
-fs.writeFileSync(path.join(DIST_DIR, 'styles.css'), srcCss, 'utf-8');
-console.log('✓ Copied styles.css');
+console.log('✓ styles.css already built by Tailwind CLI');
 
 // Copy script
 const srcJs = fs.readFileSync(path.join(__dirname, 'src', 'script.js'), 'utf-8');
