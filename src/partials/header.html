@@ -1,0 +1,32 @@
+<header class="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+  <div class="flex items-center justify-between px-6 md:px-10 py-5">
+    <a href="/" class="flex items-center gap-2 group">
+      <svg width="35" height="35" viewBox="0 0 35 35" fill="none" class="text-white">
+        <circle cx="17.5" cy="17.5" r="16.5" stroke="currentColor" stroke-width="2"/>
+        <text x="50%" y="54%" text-anchor="middle" fill="currentColor" font-size="18" font-weight="900" font-family="serif" dominant-baseline="middle">F</text>
+      </svg>
+      <span class="text-xs tracking-[0.2em] uppercase font-body hidden sm:block">__SECTION__</span>
+    </a>
+
+    <button id="menu-toggle" class="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5" aria-label="Abrir menú">
+      <span class="block w-6 h-px bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-px bg-white transition-all duration-300"></span>
+      <span class="block w-6 h-px bg-white transition-all duration-300"></span>
+    </button>
+  </div>
+</header>
+
+<div id="mega-menu" class="mega-menu-overlay">
+  <nav class="text-center">
+    <ul class="space-y-8">
+      <li><a href="/" class="text-4xl md:text-5xl font-display text-white hover:text-gold transition-colors">Inicio</a></li>
+      <li><a href="/trabajo" class="text-4xl md:text-5xl font-display text-white hover:text-gold transition-colors">Trabajo</a></li>
+      <li><a href="/servicios" class="text-4xl md:text-5xl font-display text-white hover:text-gold transition-colors">Servicios</a></li>
+      <li><a href="/contacto" class="text-4xl md:text-5xl font-display text-white hover:text-gold transition-colors">Contacto</a></li>
+    </ul>
+    <div class="mt-12 flex justify-center gap-6">
+      <a href="#" class="text-gold text-sm tracking-widest uppercase hover:text-white transition-colors">Instagram</a>
+      <a href="#" class="text-gold text-sm tracking-widest uppercase hover:text-white transition-colors">LinkedIn</a>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,46 @@
+const fs = require('fs');
+const path = require('path');
+
+const PARTIALS_DIR = path.join(__dirname, 'src', 'partials');
+const PAGES_DIR = path.join(__dirname, 'src', 'pages');
+const DIST_DIR = path.join(__dirname, 'dist');
+
+const pages = [
+  { file: 'index.html', title: 'Inicio', desc: 'Agencia digital - Transformamos ideas en experiencias digitales', section: 'Inicio' },
+  { file: 'servicios.html', title: 'Servicios', desc: 'Servicios de diseño y desarrollo digital', section: 'Servicios' },
+  { file: 'trabajo.html', title: 'Trabajo', desc: 'Portfolio de proyectos digitales', section: 'Trabajo' },
+];
+
+function loadPartial(name) {
+  return fs.readFileSync(path.join(PARTIALS_DIR, name), 'utf-8');
+}
+
+const head = loadPartial('head.html');
+const header = loadPartial('header.html');
+const footer = loadPartial('footer.html');
+
+if (!fs.existsSync(DIST_DIR)) {
+  fs.mkdirSync(DIST_DIR, { recursive: true });
+}
+
+pages.forEach(({ file, title, desc, section }) => {
+  const content = fs.readFileSync(path.join(PAGES_DIR, file), 'utf-8');
+
+  let html = head
+    .replace('__TITLE__', title)
+    .replace('__DESC__', desc);
+
+  html += header.replace('__SECTION__', section);
+  html += content;
+  html += footer;
+
+  fs.writeFileSync(path.join(DIST_DIR, file), html, 'utf-8');
+  console.log(`✓ Built ${file}`);
+});
+
+// Copy styles
+const srcCss = fs.readFileSync(path.join(__dirname, 'src', 'styles.css'), 'utf-8');
+fs.writeFileSync(path.join(DIST_DIR, 'styles.css'), srcCss, 'utf-8');
+console.log('✓ Copied styles.css');
+
+console.log('\n✅ Build complete!');

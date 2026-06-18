@@ -1,0 +1,29 @@
+{
+  "name": "francisco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i src/styles.css -o dist/styles.css --watch",
+    "build:css": "npx @tailwindcss/cli -i src/styles.css -o dist/styles.css",
+    "build:html": "node build.js",
+    "build": "npm run build:css && npm run build:html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3737631/francisco.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/3737631/francisco/issues"
+  },
+  "homepage": "https://github.com/3737631/francisco#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}

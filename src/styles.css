@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #010101;
+  --color-dark-light: #1a1a1a;
+  --color-gold: #c0ae7f;
+  --color-gold-dark: #bb984d;
+  --color-cream: #FEF6E5;
+  --color-gray-800: #323336;
+  --color-gray-600: #4a4a4e;
+  --color-gray-400: #8a8a8e;
+
+  --font-display: "SangBleuEmpire", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-polaroid-float: polaroid-float 3s ease-in-out infinite;
+  --animate-word-in: word-in 0.6s ease-out forwards;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+}
+
+@font-face {
+  font-family: "SangBleuEmpire";
+  src: url("https://www.epic.net/fonts/SangBleuEmpire-Regular-WebS.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SangBleuEmpire";
+  src: url("https://www.epic.net/fonts/SangBleuEmpire-Black-WebS.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("https://www.epic.net/fonts/inter-v11-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-dark);
+    color: white;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+  }
+}
+
+@layer components {
+  .polaroid {
+    background: white;
+    padding: 8px 8px 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .polaroid:hover {
+    transform: scale(1.02) !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  .polaroid figcaption {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    color: #555;
+    text-align: center;
+    padding-top: 6px;
+    line-height: 1.2;
+  }
+
+  .btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    transition: gap 0.3s ease;
+  }
+  .btn-arrow:hover { gap: 1.25rem; }
+
+  .btn-arrow svg {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+  }
+  .btn-arrow:hover svg { transform: translateX(4px); }
+
+  .service-number {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--color-gold);
+    letter-spacing: 0.1em;
+  }
+
+  .label-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 0.25rem;
+  }
+
+  .glow-line {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+    opacity: 0.2;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+  .hover-lift:hover { transform: translateY(-4px); }
+
+  .mega-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(1,1,1,0.95);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .mega-menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes polaroid-float {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 2deg)); }
+  50% { transform: translateY(-6px) rotate(var(--rot, 2deg)); }
+}
+
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
+}
+
+/* Stagger animation for words */
+.animate-word:nth-child(1) { animation-delay: 0s; }
+.animate-word:nth-child(2) { animation-delay: 0.1s; }
+.animate-word:nth-child(3) { animation-delay: 0.2s; }
+.animate-word:nth-child(4) { animation-delay: 0.3s; }
