@@ -1,104 +1,56 @@
-<section class="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20">
-  <div class="max-w-7xl mx-auto w-full">
-    <div class="mb-8">
-      <span class="label-tag">Nuestro Trabajo</span>
-    </div>
-    <div class="overflow-hidden">
-      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] tracking-tight">
-        <span class="block animate-word opacity-0">Proyectos</span>
-        <span class="block animate-word opacity-0" style="animation-delay:0.1s">que</span>
-        <span class="block animate-word opacity-0" style="animation-delay:0.2s">Hablan</span>
-        <span class="block animate-word opacity-0" style="animation-delay:0.3s">Solos</span>
-      </h1>
-    </div>
-  </div>
-</section>
+<main class="page">
+  <div class="page-transition" aria-hidden="true"></div>
 
-<section class="px-6 md:px-10 py-10 md:py-20">
-  <div class="max-w-7xl mx-auto space-y-32">
-    <!-- Project 1 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div class="wrapper" style="padding-top:6rem;padding-bottom:4rem;">
+    <div class="labeled-title">
+      <h1 class="h-visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;">Nuestro Trabajo</h1>
       <div>
-        <div class="polaroid w-full max-w-md mx-auto lg:mx-0 -rotate-2 animate-polaroid-float" style="--rot:-2deg">
-          <figure>
-            <div class="bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-900 aspect-[16/10]"></div>
-            <figcaption>Plataforma de e-commerce para marca de moda.</figcaption>
-          </figure>
+        <div class="h1-custom title" style="margin-bottom:2rem;">
+          <span class="labeled-title-outer">
+            <span data-position="first"><span class="title__word">Proyectos</span></span>
+            <span data-position="second"><span class="title__word" style="transition-delay:0.12s">que</span></span>
+            <span data-position="third"><span class="title__word" style="transition-delay:0.24s">Inspiran</span></span>
+          </span>
         </div>
-      </div>
-      <div>
-        <span class="service-number">01</span>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.95] mt-3">E-commerce<br><span class="text-gold">Moda</span></h2>
-        <p class="text-gray-400 text-sm leading-relaxed mt-6">Rediseño completo de plataforma e-commerce con enfoque en experiencia de usuario, resultando en un 40% más de conversiones.</p>
-        <div class="flex flex-wrap gap-2 mt-6">
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">UX Design</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">Web Development</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">Shopify</span>
+        <div class="labels-outer">
+          <ul class="labels">
+            <li class="info-label labels__item" style="list-style:none;"><span>Selección de <b>casos destacados</b></span></li>
+          </ul>
         </div>
-        <a href="#" class="btn-arrow mt-8 inline-flex">Ver caso de estudio <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1"/><path d="M94.9,56.1h-0.6c-1.4-0.2-16.9-2.4-20-17.6c-0.4-2.1-2.4-3.5-4.6-3c-2.1,0.4-3.5,2.5-3,4.6c1.4,7.2,5.1,12.4,9.3,16.1H25.1c-2.1,0-3.9,1.7-3.9,3.9c0,2.1,1.7,3.9,3.9,3.9h50.9c-4.3,3.7-7.9,8.9-9.3,16.1c-0.4,2.1,0.9,4.1,3,4.6c0.3,0.1,0.5,0.1,0.8,0.1c1.8,0,3.4-1.3,3.8-3.1c3.1-15.3,18.4-17.5,20-17.6h0.6c2.1,0,3.9-1.7,3.9-3.9C98.8,57.9,97,56.1,94.9,56.1z" fill="currentColor"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="lg:order-2">
-        <div class="polaroid w-full max-w-md mx-auto lg:mx-0 rotate-3 animate-polaroid-float" style="--rot:3deg; animation-delay:0.5s">
-          <figure>
-            <div class="bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 aspect-[16/10]"></div>
-            <figcaption>App para delivery de comida saludable.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="lg:order-1">
-        <span class="service-number">02</span>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.95] mt-3">App<br><span class="text-gold">Food Delivery</span></h2>
-        <p class="text-gray-400 text-sm leading-relaxed mt-6">Aplicación mobile nativa con WebGL, gamificación y seguimiento en tiempo real para startup de comida saludable.</p>
-        <div class="flex flex-wrap gap-2 mt-6">
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">React Native</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">WebGL</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">UX Research</span>
-        </div>
-        <a href="#" class="btn-arrow mt-8 inline-flex">Ver caso de estudio <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1"/><path d="M94.9,56.1h-0.6c-1.4-0.2-16.9-2.4-20-17.6c-0.4-2.1-2.4-3.5-4.6-3c-2.1,0.4-3.5,2.5-3,4.6c1.4,7.2,5.1,12.4,9.3,16.1H25.1c-2.1,0-3.9,1.7-3.9,3.9c0,2.1,1.7,3.9,3.9,3.9h50.9c-4.3,3.7-7.9,8.9-9.3,16.1c-0.4,2.1,0.9,4.1,3,4.6c0.3,0.1,0.5,0.1,0.8,0.1c1.8,0,3.4-1.3,3.8-3.1c3.1-15.3,18.4-17.5,20-17.6h0.6c2.1,0,3.9-1.7,3.9-3.9C98.8,57.9,97,56.1,94.9,56.1z" fill="currentColor"/></svg></a>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="polaroid w-full max-w-md mx-auto lg:mx-0 -rotate-1 animate-polaroid-float" style="--rot:-1deg; animation-delay:1s">
-          <figure>
-            <div class="bg-gradient-to-br from-rose-900 via-pink-800 to-fuchsia-900 aspect-[16/10]"></div>
-            <figcaption>Identidad visual completa para fintech.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div>
-        <span class="service-number">03</span>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.95] mt-3">Branding<br><span class="text-gold">Fintech</span></h2>
-        <p class="text-gray-400 text-sm leading-relaxed mt-6">Estrategia de marca, identidad visual completa, motion design y guías de estilo para una fintech en crecimiento.</p>
-        <div class="flex flex-wrap gap-2 mt-6">
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">Brand Strategy</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">Motion Design</span>
-          <span class="text-xs px-3 py-1 border border-gold/30 text-gold rounded-full">Art Direction</span>
-        </div>
-        <a href="#" class="btn-arrow mt-8 inline-flex">Ver caso de estudio <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1"/><path d="M94.9,56.1h-0.6c-1.4-0.2-16.9-2.4-20-17.6c-0.4-2.1-2.4-3.5-4.6-3c-2.1,0.4-3.5,2.5-3,4.6c1.4,7.2,5.1,12.4,9.3,16.1H25.1c-2.1,0-3.9,1.7-3.9,3.9c0,2.1,1.7,3.9,3.9,3.9h50.9c-4.3,3.7-7.9,8.9-9.3,16.1c-0.4,2.1,0.9,4.1,3,4.6c0.3,0.1,0.5,0.1,0.8,0.1c1.8,0,3.4-1.3,3.8-3.1c3.1-15.3,18.4-17.5,20-17.6h0.6c2.1,0,3.9-1.7,3.9-3.9C98.8,57.9,97,56.1,94.9,56.1z" fill="currentColor"/></svg></a>
       </div>
     </div>
   </div>
-</section>
 
-<section class="px-6 md:px-10 py-20 md:py-32 bg-dark-light text-center">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="font-display text-4xl md:text-6xl lg:text-7xl leading-[0.95]">
-      ¿Quieres ser el<br>
-      <span class="text-gold">próximo?</span>
-    </h2>
-    <a href="#" class="btn-arrow mt-10 inline-flex mx-auto">
-      Cuéntanos tu idea
-      <svg viewBox="0 0 120 120" fill="none">
-        <circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1"/>
-        <path d="M94.9,56.1h-0.6c-1.4-0.2-16.9-2.4-20-17.6c-0.4-2.1-2.4-3.5-4.6-3c-2.1,0.4-3.5,2.5-3,4.6c1.4,7.2,5.1,12.4,9.3,16.1H25.1c-2.1,0-3.9,1.7-3.9,3.9c0,2.1,1.7,3.9,3.9,3.9h50.9c-4.3,3.7-7.9,8.9-9.3,16.1c-0.4,2.1,0.9,4.1,3,4.6c0.3,0.1,0.5,0.1,0.8,0.1c1.8,0,3.4-1.3,3.8-3.1c3.1-15.3,18.4-17.5,20-17.6h0.6c2.1,0,3.9-1.7,3.9-3.9C98.8,57.9,97,56.1,94.9,56.1z" fill="currentColor"/>
-      </svg>
-    </a>
+  <div class="wrapper" style="padding-bottom:4rem;">
+    <div class="intro-text">
+      <p>Cada proyecto es una historia. Aquí compartimos algunos de los trabajos que más orgullo nos generan. Desde identidad visual hasta productos digitales complejos.</p>
+    </div>
   </div>
-</section>
+
+  <div class="wrapper" style="padding-bottom:6rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+      <div class="reveal" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;">
+        <span class="info-value">Branding, Websites</span>
+        <h3 class="h2-custom" style="font-size:clamp(1.8rem,4vw,3rem);margin:0.5rem 0;">Proyecto Uno</h3>
+        <p class="p-medium">Descripción breve del proyecto y su impacto.</p>
+        <a href="#" class="btn--small" style="margin-top:1rem;">
+          Ver proyecto
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
+          </svg>
+        </a>
+      </div>
+      <div class="reveal" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;">
+        <span class="info-value">Digital Products</span>
+        <h3 class="h2-custom" style="font-size:clamp(1.8rem,4vw,3rem);margin:0.5rem 0;">Proyecto Dos</h3>
+        <p class="p-medium">Descripción breve del proyecto y su impacto.</p>
+        <a href="#" class="btn--small" style="margin-top:1rem;">
+          Ver proyecto
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>

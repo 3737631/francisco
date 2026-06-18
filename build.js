@@ -43,4 +43,9 @@ const srcCss = fs.readFileSync(path.join(__dirname, 'src', 'styles.css'), 'utf-8
 fs.writeFileSync(path.join(DIST_DIR, 'styles.css'), srcCss, 'utf-8');
 console.log('✓ Copied styles.css');
 
+// Copy script
+const srcJs = fs.readFileSync(path.join(__dirname, 'src', 'script.js'), 'utf-8');
+fs.writeFileSync(path.join(DIST_DIR, 'script.js'), srcJs, 'utf-8');
+console.log('✓ Copied script.js');
+
 console.log('\n✅ Build complete!');
