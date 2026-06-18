@@ -3,18 +3,18 @@
 
   <div class="wrapper" style="padding-top:6rem;padding-bottom:4rem;">
     <div class="labeled-title">
-      <h1 class="h-visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;">Nuestro Trabajo</h1>
-      <div>
-        <div class="h1-custom title" style="margin-bottom:2rem;">
-          <span class="labeled-title-outer">
-            <span data-position="first"><span class="title__word">Proyectos</span></span>
-            <span data-position="second"><span class="title__word" style="transition-delay:0.12s">que</span></span>
-            <span data-position="third"><span class="title__word" style="transition-delay:0.24s">Inspiran</span></span>
-          </span>
+      <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;">Nuestro Trabajo</h1>
+      <div class="is-active">
+        <div class="is-first h1-custom title">
+          <div class="labeled-title-outer">
+            <span data-position="first"><span class="title-word" style="transition-delay:0s">Proyectos</span></span>
+            <span data-position="second"><span class="title-word" style="transition-delay:0.15s">que</span></span>
+            <span data-position="third"><span class="title-word" style="transition-delay:0.3s">Inspiran</span></span>
+          </div>
         </div>
-        <div class="labels-outer">
+        <div class="is-first labels-outer mt-title">
           <ul class="labels">
-            <li class="info-label labels__item" style="list-style:none;"><span>Selección de <b>casos destacados</b></span></li>
+            <li class="info-label labels__item"><span data-label="first end bottom">Selección de <b>casos destacados</b></span></li>
           </ul>
         </div>
       </div>
@@ -22,34 +22,99 @@
   </div>
 
   <div class="wrapper" style="padding-bottom:4rem;">
-    <div class="intro-text">
-      <p>Cada proyecto es una historia. Aquí compartimos algunos de los trabajos que más orgullo nos generan. Desde identidad visual hasta productos digitales complejos.</p>
+    <div class="intro-text-outer">
+      <div class="intro-text">
+        <p>Cada proyecto es una historia. Aquí compartimos algunos de los trabajos que más orgullo nos generan. Desde identidad visual hasta productos digitales complejos.</p>
+      </div>
     </div>
   </div>
 
   <div class="wrapper" style="padding-bottom:6rem;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-      <div class="reveal" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;">
-        <span class="info-value">Branding, Websites</span>
-        <h3 class="h2-custom" style="font-size:clamp(1.8rem,4vw,3rem);margin:0.5rem 0;">Proyecto Uno</h3>
-        <p class="p-medium">Descripción breve del proyecto y su impacto.</p>
-        <a href="#" class="btn--small" style="margin-top:1rem;">
-          Ver proyecto
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
-          </svg>
-        </a>
+    <div class="list">
+      <div class="list__item wrapper">
+        <span class="list__item__count">1. </span>
+        <div class="list__item-content">
+          <span class="info-value list__item__headline">Branding, Websites</span>
+          <h2 class="h2-custom list__item__title">Proyecto<br>Uno</h2>
+          <div class="list__item__text">
+            <div class="p-medium">
+              <p>Descripción breve del proyecto y su impacto.</p>
+            </div>
+            <div class="list__item__services">
+              <a href="#" class="btn--small">
+                <span>Ver proyecto</span>
+                <svg role="presentation" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="list__item__images stacked">
+            <div class="picture-outer list__item__image" data-polaroid="true" style="transform:rotate(6deg);" data-draggable>
+              <figure class="polaroid picture">
+                <div class="picture__img">
+                  <div class="picture__placeholder"></div>
+                  <img src="https://picsum.photos/id/100/1600/1200" srcset="https://picsum.photos/id/100/800/600 800w, https://picsum.photos/id/100/1600/1200 1600w" sizes="100px" width="1600" height="1200" alt="" loading="lazy">
+                </div>
+                <figcaption class="polaroid__caption picture__caption">Identidad visual para marca de tecnología.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="list__item__images full">
+          <div class="picture-outer list__item__image" data-polaroid="true" style="transform:rotate(6deg);">
+            <figure class="polaroid picture">
+              <div class="picture__img">
+                <div class="picture__placeholder"></div>
+                <img src="https://picsum.photos/id/100/1600/1200" srcset="https://picsum.photos/id/100/800/600 800w, https://picsum.photos/id/100/1600/1200 1600w" sizes="100px" width="1600" height="1200" alt="" loading="lazy">
+              </div>
+              <figcaption class="polaroid__caption picture__caption">Identidad visual para marca de tecnología.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
-      <div class="reveal" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;">
-        <span class="info-value">Digital Products</span>
-        <h3 class="h2-custom" style="font-size:clamp(1.8rem,4vw,3rem);margin:0.5rem 0;">Proyecto Dos</h3>
-        <p class="p-medium">Descripción breve del proyecto y su impacto.</p>
-        <a href="#" class="btn--small" style="margin-top:1rem;">
-          Ver proyecto
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
-          </svg>
-        </a>
+
+      <div class="is-reversed list__item wrapper">
+        <span class="list__item__count">2. </span>
+        <div class="list__item-content">
+          <span class="info-value list__item__headline">Digital Products</span>
+          <h2 class="h2-custom list__item__title">Proyecto<br>Dos</h2>
+          <div class="list__item__text">
+            <div class="p-medium">
+              <p>Descripción breve del proyecto y su impacto.</p>
+            </div>
+            <div class="list__item__services">
+              <a href="#" class="btn--small">
+                <span>Ver proyecto</span>
+                <svg role="presentation" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 14H8m12 0l-5-5m5 5l-5 5"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="list__item__images stacked">
+            <div class="picture-outer list__item__image" data-polaroid="true" style="transform:rotate(-4deg);" data-draggable>
+              <figure class="polaroid picture">
+                <div class="picture__img">
+                  <div class="picture__placeholder"></div>
+                  <img src="https://picsum.photos/id/110/1600/1200" srcset="https://picsum.photos/id/110/800/600 800w, https://picsum.photos/id/110/1600/1200 1600w" sizes="100px" width="1600" height="1200" alt="" loading="lazy">
+                </div>
+                <figcaption class="polaroid__caption picture__caption">Aplicación web para e-commerce.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="list__item__images full">
+          <div class="picture-outer list__item__image" data-polaroid="true" style="transform:rotate(-4deg);">
+            <figure class="polaroid picture">
+              <div class="picture__img">
+                <div class="picture__placeholder"></div>
+                <img src="https://picsum.photos/id/110/1600/1200" srcset="https://picsum.photos/id/110/800/600 800w, https://picsum.photos/id/110/1600/1200 1600w" sizes="100px" width="1600" height="1200" alt="" loading="lazy">
+              </div>
+              <figcaption class="polaroid__caption picture__caption">Aplicación web para e-commerce.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,73 +1,79 @@
-<header class="header">
-  <div class="header-inner">
-    <div style="display:flex;align-items:center;">
+<div class="header">
+  <div class="header-outer">
+    <div class="header-inner">
       <a href="/" class="header__logo" aria-label="Francisco">
         <svg role="presentation" width="35" height="35" viewBox="0 0 35 35" fill="none">
           <circle cx="17.5" cy="17.5" r="16.5" stroke="currentColor" stroke-width="2"/>
-          <text x="50%" y="54%" text-anchor="middle" fill="currentColor" font-size="18" font-weight="400" font-family="SangBleuEmpire,Georgia,serif" dominant-baseline="middle">F</text>
+          <text x="50%" y="54%" text-anchor="middle" fill="currentColor" font-size="18" font-weight="400" font-family="sang-bleu,Georgia,serif" dominant-baseline="middle">F</text>
         </svg>
       </a>
       <span class="section-label header__title">__SECTION__</span>
-    </div>
-    <div class="header__menu-outer">
-      <div class="lang-switcher">
-        <button id="lang-btn" aria-label="Cambiar idioma">
-          <span>es</span>
-          <svg id="lang-arrow" class="arrow" viewBox="0 0 13 7" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M1.5 1.5l5 4 5-4"/>
-          </svg>
-        </button>
-        <ul id="lang-list" class="lang-list">
-          <li><a href="/" class="active">es</a></li>
-          <li><a href="/en">en</a></li>
-        </ul>
+      <div class="header__menu-outer">
+        <div class="language__switcher">
+          <button id="lang-btn" class="lang-trigger">
+            <span>es</span>
+            <svg viewBox="0 0 13 7" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1.5 1.5l5 4 5-4"/>
+            </svg>
+          </button>
+          <ul id="lang-list" class="lang-list">
+            <li><a href="/">es</a></li>
+            <li><a href="/en">en</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu">
+          <button id="menu-trigger" class="mega-menu__trigger" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
-      <button id="menu-trigger" class="mega-menu__trigger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </div>
-</header>
+</div>
 
 <div id="mega-menu" class="mega-menu">
   <div class="mega-menu-inner">
-    <div class="mega-menu__content">
-      <div>
-        <ol class="mega-menu__links">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/trabajo">Trabajo</a></li>
-          <li><a href="/servicios">Servicios</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-        </ol>
-        <ol class="mega-menu__links--secondary">
-          <li><a href="#">Carreras</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ol>
+    <div class="wrapper mega-menu-main">
+      <div class="mega-menu__content">
+        <div class="mega-menu__block">
+          <ol class="mega-menu__links">
+            <li><a href="/" class="mega-menu__links__item">Inicio</a></li>
+            <li><a href="/trabajo" class="mega-menu__links__item">Trabajo</a></li>
+            <li><a href="/servicios" class="mega-menu__links__item">Servicios</a></li>
+            <li><a href="/contacto" class="mega-menu__links__item">Contacto</a></li>
+          </ol>
+          <ol class="mega-menu__links--secondary">
+            <li><a href="#" class="mega-menu__links__item--secondary">Carreras</a></li>
+            <li><a href="#" class="mega-menu__links__item--secondary">Contacto</a></li>
+          </ol>
+        </div>
+        <div class="mega-menu__block mega-menu__cta">
+          <a href="#" class="mega-menu__cta__link">
+            <div class="cta__headline">Empieza un</div>
+            <div class="cta__word">nuevo</div>
+            <div class="cta__word">proyecto</div>
+            <div class="cta__baseline">con nosotros</div>
+          </a>
+        </div>
       </div>
-      <div>
-        <a href="#" class="mega-menu__cta-block" style="display:block;">
-          <div class="cta__headline">Empieza un</div>
-          <div class="cta__word">nuevo</div>
-          <div class="cta__word">proyecto</div>
-          <div class="cta__baseline">con nosotros</div>
-          <svg class="cta-arrow-svg" viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1"/>
-            <path d="M94.9,56.1h-0.6c-1.4-0.2-16.9-2.4-20-17.6c-0.4-2.1-2.4-3.5-4.6-3c-2.1,0.4-3.5,2.5-3,4.6c1.4,7.2,5.1,12.4,9.3,16.1H25.1c-2.1,0-3.9,1.7-3.9,3.9c0,2.1,1.7,3.9,3.9,3.9h50.9c-4.3,3.7-7.9,8.9-9.3,16.1c-0.4,2.1,0.9,4.1,3,4.6c0.3,0.1,0.5,0.1,0.8,0.1c1.8,0,3.4-1.3,3.8-3.1c3.1-15.3,18.4-17.5,20-17.6h0.6c2.1,0,3.9-1.7,3.9-3.9C98.8,57.9,97,56.1,94.9,56.1z" fill="currentColor"/>
-          </svg>
-        </a>
+      <div class="mega-menu__footer">
+        <div class="mega-menu__footer-items">
+          <div class="mega-menu__footer__share">
+            <div class="mega-menu__socials">
+              <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M9.5 3H12V0H9.5C7.6 0 6 1.6 6 3.5V5H4v3h2v8h3V8h2l.5-3H9V3.5c0-.3.2-.5.5-.5z"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.1C0 .5.5 0 1.1 0h13.8C15.5 0 16 .5 16 1.1v13.8c0 .6-.5 1.1-1.1 1.1H1.1C.5 16 0 15.5 0 14.9V1.1zM4.8 13.3V6.2H2.4v7.1h2.4zM3.6 5.3c.8 0 1.4-.6 1.4-1.4S4.4 2.6 3.6 2.6s-1.4.6-1.4 1.4.6 1.3 1.4 1.3zm9.7 8V9.9c0-2.3-1.2-3.4-2.9-3.4-1.3 0-1.9.7-2.2 1.2V6.2H6.1c0 .7.1 7.1.1 7.1h2.4V10c0-.2 0-.5.1-.7.2-.5.7-1 1.5-1 .9 0 1.3.6 1.3 1.5v3.5h2.4v-.1z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.8 0 5.5.1 4.5.3c-1 .2-1.7.5-2.3 1.1C1.6 2 1.3 2.7 1.1 3.7.9 4.7.8 5 .8 8s.1 3.3.3 4.3c.2 1 .5 1.7 1.1 2.3.6.6 1.3.9 2.3 1.1 1 .2 1.3.3 4.3.3s3.3-.1 4.3-.3c1-.2 1.7-.5 2.3-1.1.6-.6.9-1.3 1.1-2.3.2-1 .3-1.3.3-4.3s-.1-3.3-.3-4.3c-.2-1-.5-1.7-1.1-2.3C14 1.1 13.3.8 12.3.6 11.3.4 11 .3 8 .3zm0 1.4c2.2 0 2.4.1 3.3.2.9.2 1.3.4 1.7.7.3.3.6.7.7 1.2.2.8.3 1.1.3 3.2s-.1 2.4-.3 3.2c-.1.5-.4.9-.7 1.2-.4.3-.8.6-1.7.7-.9.2-1.1.2-3.3.2s-2.4-.1-3.3-.2c-.9-.2-1.3-.4-1.7-.7-.3-.3-.6-.7-.7-1.2-.2-.8-.3-1.1-.3-3.2s.1-2.4.3-3.2c.1-.5.4-.9.7-1.2.4-.3.8-.6 1.7-.7.8-.1 1.1-.2 3.3-.2zm0 2.4c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2-1.9-4.2-4.2-4.2zm0 7c-1.5 0-2.8-1.2-2.8-2.8S6.5 5.5 8 5.5s2.8 1.2 2.8 2.8S9.5 9.8 8 9.8zm4.9-7.3c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <nav class="mega-menu__legals">
+          <ol class="mega-menu__links--secondary">
+            <li><a href="#" class="mega-menu__links__item--secondary mega-menu__legals__link">Términos generales</a></li>
+            <li><a href="#" class="mega-menu__links__item--secondary mega-menu__legals__link">Política de privacidad</a></li>
+            <li><a href="#" class="mega-menu__links__item--secondary mega-menu__legals__link">Política de cookies</a></li>
+          </ol>
+        </nav>
       </div>
-    </div>
-    <div class="mega-menu__footer">
-      <div class="mega-menu__socials">
-        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M9.5 3H12V0H9.5C7.6 0 6 1.6 6 3.5V5H4v3h2v8h3V8h2l.5-3H9V3.5c0-.3.2-.5.5-.5z"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.1C0 .5.5 0 1.1 0h13.8C15.5 0 16 .5 16 1.1v13.8c0 .6-.5 1.1-1.1 1.1H1.1C.5 16 0 15.5 0 14.9V1.1zM4.8 13.3V6.2H2.4v7.1h2.4zM3.6 5.3c.8 0 1.4-.6 1.4-1.4S4.4 2.6 3.6 2.6s-1.4.6-1.4 1.4.6 1.3 1.4 1.3zm9.7 8V9.9c0-2.3-1.2-3.4-2.9-3.4-1.3 0-1.9.7-2.2 1.2V6.2H6.1c0 .7.1 7.1.1 7.1h2.4V10c0-.2 0-.5.1-.7.2-.5.7-1 1.5-1 .9 0 1.3.6 1.3 1.5v3.5h2.4v-.1z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.8 0 5.5.1 4.5.3c-1 .2-1.7.5-2.3 1.1C1.6 2 1.3 2.7 1.1 3.7.9 4.7.8 5 .8 8s.1 3.3.3 4.3c.2 1 .5 1.7 1.1 2.3.6.6 1.3.9 2.3 1.1 1 .2 1.3.3 4.3.3s3.3-.1 4.3-.3c1-.2 1.7-.5 2.3-1.1.6-.6.9-1.3 1.1-2.3.2-1 .3-1.3.3-4.3s-.1-3.3-.3-4.3c-.2-1-.5-1.7-1.1-2.3C14 1.1 13.3.8 12.3.6 11.3.4 11 .3 8 .3zm0 1.4c2.2 0 2.4.1 3.3.2.9.2 1.3.4 1.7.7.3.3.6.7.7 1.2.2.8.3 1.1.3 3.2s-.1 2.4-.3 3.2c-.1.5-.4.9-.7 1.2-.4.3-.8.6-1.7.7-.9.2-1.1.2-3.3.2s-2.4-.1-3.3-.2c-.9-.2-1.3-.4-1.7-.7-.3-.3-.6-.7-.7-1.2-.2-.8-.3-1.1-.3-3.2s.1-2.4.3-3.2c.1-.5.4-.9.7-1.2.4-.3.8-.6 1.7-.7.8-.1 1.1-.2 3.3-.2zm0 2.4c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2-1.9-4.2-4.2-4.2zm0 7c-1.5 0-2.8-1.2-2.8-2.8S6.5 5.5 8 5.5s2.8 1.2 2.8 2.8S9.5 9.8 8 9.8zm4.9-7.3c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"/></svg></a>
-      </div>
-      <nav class="mega-menu__legals">
-        <a href="#">Términos generales</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Política de cookies</a>
-      </nav>
     </div>
   </div>
 </div>

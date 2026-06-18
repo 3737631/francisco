@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var header = document.querySelector('.header');
+
   /* ── Word stagger entrance ── */
-  var words = document.querySelectorAll('.title__word');
+  var words = document.querySelectorAll('.title-word');
   words.forEach(function (w, i) {
     setTimeout(function () {
       w.classList.add('visible');
-    }, 200 + i * 120);
+    }, 300 + i * 150);
   });
 
   /* ── Scroll reveal ── */
@@ -20,15 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
     revealObserver.observe(el);
   });
 
-  /* ── Stagger children reveal ── */
-  document.querySelectorAll('[data-stagger]').forEach(function (parent) {
-    var children = parent.children;
-    var delay = parseFloat(parent.getAttribute('data-stagger-delay')) || 0.12;
-    var base = parseFloat(parent.getAttribute('data-stagger-base')) || 0;
-    Array.from(children).forEach(function (child, i) {
-      child.style.setProperty('--stagger-delay', (base + i * delay) + 's');
-    });
-  });
+  /* ── Header scroll state ── */
+  function onScroll() {
+    if (window.scrollY > 60) {
+      header.classList.add('has-scrolled');
+    } else {
+      header.classList.remove('has-scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ── Mega menu ── */
   var trigger = document.getElementById('menu-trigger');
@@ -51,33 +53,48 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Language switcher ── */
   var langBtn = document.getElementById('lang-btn');
   var langList = document.getElementById('lang-list');
-  var langArrow = document.getElementById('lang-arrow');
   if (langBtn && langList) {
     langBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      var open = langList.classList.toggle('open');
-      if (langArrow) langArrow.classList.toggle('open');
+      langBtn.classList.toggle('active');
+      langList.classList.toggle('active');
     });
     document.addEventListener('click', function () {
-      langList.classList.remove('open');
-      if (langArrow) langArrow.classList.remove('open');
+      langBtn.classList.remove('active');
+      langList.classList.remove('active');
     });
   }
 
-  /* ── Polaroid tilt on hover ── */
-  document.querySelectorAll('.polaroid-float').forEach(function (p) {
-    p.addEventListener('mousemove', function (e) {
-      var rect = p.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var centerX = rect.width / 2;
-      var centerY = rect.height / 2;
-      var rotateX = (y - centerY) / 20;
-      var rotateY = (centerX - x) / 20;
-      p.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.03)';
+  /* ── Draggable image scroll ── */
+  var draggables = document.querySelectorAll('[data-draggable]');
+  draggables.forEach(function (container) {
+    var isDown = false;
+    var startX, scrollLeft;
+
+    container.addEventListener('mousedown', function (e) {
+      isDown = true;
+      container.classList.add('active');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      e.preventDefault();
     });
-    p.addEventListener('mouseleave', function () {
-      p.style.transform = '';
+
+    container.addEventListener('mouseleave', function () {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mouseup', function () {
+      isDown = false;
+      container.classList.remove('active');
+    });
+
+    container.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - container.offsetLeft;
+      var walk = (x - startX) * 1;
+      container.scrollLeft = scrollLeft - walk;
     });
   });
 });
